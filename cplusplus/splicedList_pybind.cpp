@@ -16,7 +16,7 @@ PYBIND11_MODULE(splicedList, m)
         .def(py::init<>()) // Constructor
         .def("exists", &SplicedList::exists, "Check if a key exists in the list",
              py::arg("key"))
-        .def("pop_value", &SplicedList::popValue, "Remove and return the value for a given key",
+        .def("pop", &SplicedList::popValue, "Remove and return the value for a given key",
              py::arg("key"))
         .def("insert", [](SplicedList &self, const std::string &key, const py::object &after)
              {

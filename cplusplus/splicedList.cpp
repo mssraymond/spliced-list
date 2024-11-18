@@ -154,10 +154,10 @@ void SplicedList::insert(std::string key, std::string *after)
             }
             this->map[key] = node;
             this->size++;
-            while (this->head->prev != nullptr)
-            {
-                this->head = this->head->prev;
-            }
+        }
+        while (this->head->prev != nullptr)
+        {
+            this->head = this->head->prev;
         }
     }
 }

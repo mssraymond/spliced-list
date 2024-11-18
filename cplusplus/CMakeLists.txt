@@ -12,14 +12,10 @@ find_package(Python 3.10 COMPONENTS Interpreter Development REQUIRED)
 find_package(pybind11 REQUIRED)
 
 # Add the main library
-add_library(splicedlist_lib
-    splicedList.cpp
-)
+add_library(splicedlist_lib splicedList.cpp)
 
 # Create the Python module
-pybind11_add_module(splicedList 
-    splicedList_pybind.cpp
-)
+pybind11_add_module(splicedList splicedList_pybind.cpp)
 
 # Link the main library to the Python module
 target_link_libraries(splicedList PRIVATE splicedlist_lib)
