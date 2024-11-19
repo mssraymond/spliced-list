@@ -25,7 +25,7 @@ PYBIND11_MODULE(splicedList, m)
             } else {
                 std::string after_str = after.cast<std::string>();
                 self.insert(key, &after_str);
-            } }, "Insert a key into the list, optionally after another key", py::arg("key"), py::arg("after") = py::none())
+            } }, "Insert a key into the list, optionally before another key (denoted by 'after')", py::arg("key"), py::arg("after") = py::none())
         .def("get_all", [](SplicedList &self)
              {
             auto [arr, size] = self.getAll();
